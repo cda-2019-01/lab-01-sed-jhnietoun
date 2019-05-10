@@ -10,5 +10,5 @@ sed 's|/|-|g' out.7 > out.8                                                    #
 sed 's|,|.|g' out.8 > out.9                                                    # Reemplaza el separador de decimales de "," por "."
 sed 's|;|,|g' out.9 > out.10                                                   # Reemplaza el separador ";" por ","
 sed 's|,\([0-9]\)\([0-9]\)\([0-9]\)$|,\1\2\3.0|'g  out.10 > out.11             # Adiciona el decimal a los números que no lo tienen
-sed '/N/!d' out.11 > solución.csv                                              # Elimina los registros que no tienen campos nulos 
+sed '/N/d' out.11 > solución.csv                                              # Elimina los registros que no tienen campos nulos 
 rm out.*                                                                       # Borra los datos temporales que se crearon en el proceso
